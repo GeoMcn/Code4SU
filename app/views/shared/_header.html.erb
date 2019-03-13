@@ -28,7 +28,10 @@
                 <li><%= link_to "Login", new_user_session_path %></li>
                 
                 <% else %>
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><%= current_user.name %><i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-trigger valign-wrapper" href="#!" data-target="dropdown1">
+                <%= avatar_url(current_user, 40) %>
+                <%= current_user.name %><i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
                 
                 <% end %>
               </ul>
@@ -43,7 +46,9 @@
                 <li><%= link_to "Login", new_user_session_path %></li>
                 
                 <% else %>
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown2"><%= current_user.name %><i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-trigger valign-wrapper" href="#!" data-target="dropdown2">
+                <%= avatar_url(current_user, 40) %>
+                <%= current_user.name %><i class="material-icons right">arrow_drop_down</i></a></li>
                 
                 <% end %>
               
